@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fb;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #111, #333);
+  color: white;
+}
+
+.cta-btn {
+  padding: 12px 25px;
+  background: #ff6a00;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+section {
+  padding: 60px 10%;
+}
+
+.services div,
+.blogs div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact input, button {
+  padding: 12px;
+  margin-bottom: 12px;
+}
