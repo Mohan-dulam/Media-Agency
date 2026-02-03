@@ -1,36 +1,37 @@
-// SERVICES DATA
-const services = [
-  { title: "Performance Marketing", desc: "Google & Meta Ads" },
-  { title: "SEO Optimization", desc: "Rank higher organically" },
-  { title: "Analytics & GTM", desc: "GA4, GTM, Meta CAPI" }
-];
+let cartCount = localStorage.getItem("cart") || 0;
+document.querySelectorAll("#cart-count").forEach(el => el.innerText = cartCount);
 
-const serviceContainer = document.getElementById("services-container");
+// ADD TO CART
+document.querySelectorAll(".add-cart").forEach(btn => {
+  btn.addEventListener("click", () => {
+    cartCount++;
+    localStorage.setItem("cart", cartCount);
+    document.querySelectorAll("#cart-count").forEach(el => el.innerText = cartCount);
 
-services.forEach(service => {
-  const div = document.createElement("div");
-  div.className = "card";
-  div.innerHTML = `<h3>${service.title}</h3><p>${service.desc}</p>`;
-  serviceContainer.appendChild(div);
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: "add_to_cart",
+      plan: btn.dataset.plan
+    });
+  });
 });
 
-// BLOG DATA
-const blogs = [
-  "How GTM Works",
-  "GA4 Event Tracking",
-  "Meta Pixel vs CAPI"
-];
+// LEAD FORM
+const form = document.getElementById("lead-form");
+if (form) {
+  form.addEventListener("submit", function () {
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ event: "lead_submit" });
+    window.location.href = "thankyou.html";
+  });
+}
 
-const blogContainer = document.getElementById("blog-container");
-
-blogs.forEach(blog => {
-  const div = document.createElement("div");
-  div.className = "card";
-  div.innerHTML = `<h4>${blog}</h4><button class="read-btn">Read More</button>`;
-  blogContainer.appendChild(div);
-});
-
-// FORM SUBMIT (for GTM trigger)
-document.getElementById("lead-form").addEventListener("submit", function () {
-  console.log("Lead form submitted");
+// CTA CLICK
+document.querySelectorAll(".cta").forEach(btn => {
+  btn.addEventListener("click", () => {
+    dataLayer.push({
+      event: "cta_click",
+      location: btn.dataset.cta
+    });
+  });
 });
