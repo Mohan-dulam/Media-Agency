@@ -1,50 +1,11 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f8f9fb;
-}
-
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #111, #333);
-  color: white;
-}
-
-.cta-btn {
-  padding: 12px 25px;
-  background: #ff6a00;
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-section {
-  padding: 60px 10%;
-}
-
-.services div,
-.blogs div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.contact form {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.contact input, button {
-  padding: 12px;
-  margin-bottom: 12px;
-}
+body { font-family: Arial; margin:0; background:#f5f7fa; }
+.nav { padding:15px; background:#111; color:#fff; display:flex; justify-content:space-between; }
+.nav a { color:white; margin-right:15px; text-decoration:none; }
+.hero { padding:80px; text-align:center; background:#222; color:white; }
+.cta { padding:12px 25px; background:orange; border:none; cursor:pointer; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; padding:40px; }
+.card { background:white; padding:20px; border-radius:8px; text-align:center; }
+.form { max-width:400px; margin:auto; display:flex; flex-direction:column; gap:15px; }
+.center { text-align:center; }
+.cart { font-size:18px; }
+.video { text-align:center; padding:40px; }
